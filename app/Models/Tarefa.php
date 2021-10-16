@@ -12,6 +12,7 @@ class Tarefa extends Model
     use HasFactory;
 
     public $timestamps = false;
+    
     protected $fillable = [
         'titulo','descricao','data_inicio','data_fim',
         'tipo_tarefa_id','status_tarefa_id'
@@ -19,11 +20,11 @@ class Tarefa extends Model
 
     public function tipo()
     {
-        return $this->belongsTo(TipoTarefa::class);
+        return $this->belongsTo(TipoTarefa::class, 'tipo_tarefa_id');
     }
 
     public function status()
     {
-        return $this->belongsTo(StatusTarefa::class);
+        return $this->belongsTo(StatusTarefa::class, 'status_tarefa_id');
     }
 }
