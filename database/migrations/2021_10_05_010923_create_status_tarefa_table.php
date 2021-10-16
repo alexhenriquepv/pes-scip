@@ -4,9 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use App\Models\Cliente;
-
-class CreateProjetosTable extends Migration
+class CreateStatusTarefaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,12 +13,9 @@ class CreateProjetosTable extends Migration
      */
     public function up()
     {
-        Schema::create('projetos', function (Blueprint $table) {
+        Schema::create('status_tarefa', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->boolean('ativo');
-            $table->foreignIdFor(Cliente::class);
-            $table->enum('prioridade', ['low','medium','hard']);
+            $table->string('descricao');
         });
     }
 
@@ -31,6 +26,6 @@ class CreateProjetosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projetos');
+        Schema::dropIfExists('status_tarefa');
     }
 }

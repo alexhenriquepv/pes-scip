@@ -3,24 +3,22 @@
 [Usuários](usuarios.md)
 [Clientes](clientes.md)
 [Projetos](projetos.md)
-<!-- [Tarefas](tarefas.md) -->
+[Tarefas](tarefas.md)
 <!-- [Lançamentos](lancamentos.md) -->
 
 # Configuração
 
-## Passo 1 - Criar a migration
+## Variáveis de ambiente
+Devem ser definidas no arquivo ```.env```.
+Use o arquivo ```.env.example``` como modelo.
 
-```php
-php artisan make:migration create_exemplo_table
-```
+## Banco de Dados
+Caso queira utlizar um SQLite, crie o arquivo no diretório ```/database```.
+Ex: ```/database/exemplo.sqlite```
 
-## Passo 2 -Executar a migration
+## Migrations
 
-```php
-php artisan migrate
-```
-
-### Opcional - Resetar o banco
+Limpar o banco
 
 ```php
 php artisan migrate:rollback
@@ -28,16 +26,39 @@ php artisan migrate:rollback
 php artisan migrate:refresh
 ```
 
-## Passo 3 - Criar o model
+Criar as migrations necessárias
+
+```php
+php artisan make:migration create_exemplo_table
+```
+
+E executar
+
+```php
+php artisan migrate
+```
+
+
+### Preencher com dados Fakes
+
+```php
+php artisan db:seed
+```
+Atualmente preenche a tabela de **Status de tarefa** e **Tipos de tarefa**.
+
+## Criar o model
 
 ```php
 php artisan make:model NomeDoModelo
 ```
 
-## Passo 4 - Criar o controller
+## Criar o controller
 
 ```php
 php artisan make:controller NomeController
 ```
 
-## Passo 5 - Rodar a aplicação
+## Rodar a aplicação
+```php
+php artisan serve
+```
