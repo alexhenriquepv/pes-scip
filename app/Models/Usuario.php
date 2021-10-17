@@ -10,7 +10,8 @@ class Usuario extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome','perfil_id'];
+    public $timestamps = false;
+    protected $fillable = ['nome','perfil_id','cpf','carga_horaria','email'];
 
     public function perfil()
     {

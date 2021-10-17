@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 use \Database\Seeders\StatusTarefaSeeder;
 use \Database\Seeders\TipoTarefaSeeder;
+use \Database\Seeders\UsuarioSeeder;
+use \Database\Seeders\ClienteSeeder;
+use \Database\Seeders\ProjetoSeeder;
+use \Database\Seeders\TarefaSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,7 +23,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             StatusTarefaSeeder::class,
-            TipoTarefaSeeder::class
+            TipoTarefaSeeder::class,
+            UsuarioSeeder::class,
+            ClienteSeeder::class,
+            ProjetoSeeder::class,
+            TarefaSeeder::class
         ]);
     }
 }

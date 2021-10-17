@@ -19,7 +19,7 @@ class CreateTarefasTable extends Migration
         Schema::create('tarefas', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('descricao');
+            $table->string('descricao')->nullable();
             $table->date('data_inicio');
             $table->date('data_fim');
             $table->foreignIdFor(TipoTarefa::class);

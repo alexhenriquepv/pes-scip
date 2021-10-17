@@ -18,7 +18,10 @@ class CreateProjetosTable extends Migration
         Schema::create('projetos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->boolean('ativo');
+            $table->string('descricao')->nullable();
+            $table->boolean('ativo')->default(true);
+            $table->date('data_inicio');
+            $table->date('data_fim');
             $table->foreignIdFor(Cliente::class);
             $table->enum('prioridade', ['low','medium','hard']);
         });

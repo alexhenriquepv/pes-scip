@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\TipoTarefa;
 use App\Models\StatusTarefa;
+use App\Models\Usuario;
 
 class Tarefa extends Model
 {
@@ -26,5 +27,10 @@ class Tarefa extends Model
     public function status()
     {
         return $this->belongsTo(StatusTarefa::class, 'status_tarefa_id');
+    }
+
+    public function usuarios()
+    {
+        return $this->belongsToMany(Usuario::class);
     }
 }

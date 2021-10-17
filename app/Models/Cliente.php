@@ -10,8 +10,8 @@ class Cliente extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome'];
     public $timestamps = false;
+    protected $fillable = ['nome','cnpj','sevico','contato','endereco'];
 
     public function projetos()
     {
