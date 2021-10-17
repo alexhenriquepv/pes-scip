@@ -11,6 +11,9 @@ class Usuario extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    protected $hidden = ['pivot'];
+    
     protected $fillable = ['nome','perfil_id','cpf','carga_horaria','email'];
 
     public function perfil()

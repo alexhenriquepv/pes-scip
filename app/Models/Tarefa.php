@@ -29,7 +29,7 @@ class Tarefa extends Model
         return $this->belongsTo(StatusTarefa::class, 'status_tarefa_id');
     }
 
-    public function usuarios()
+    public function membros()
     {
         return $this->belongsToMany(Usuario::class);
     }

@@ -29,7 +29,7 @@ class Projeto extends Model
         return $this->hasMany(Tarefa::class);
     }
 
-    public function usuarios()
+    public function membros()
     {
         return $this->belongsToMany(Usuario::class);
     }
