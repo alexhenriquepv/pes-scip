@@ -4,7 +4,7 @@
 [Clientes](clientes.md)
 [Projetos](projetos.md)
 [Tarefas](tarefas.md)
-<!-- [Lançamentos](lancamentos.md) -->
+[Lançamentos](lancamentos.md)
 
 # Configuração
 

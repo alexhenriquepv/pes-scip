@@ -5,8 +5,13 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+use \Database\Seeders\PerfilSeeder;
+use \Database\Seeders\UsuarioSeeder;
+use \Database\Seeders\ClienteSeeder;
+use \Database\Seeders\ProjetoSeeder;
 use \Database\Seeders\StatusTarefaSeeder;
 use \Database\Seeders\TipoTarefaSeeder;
+use \Database\Seeders\TarefaSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,8 +23,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            PerfilSeeder::class,
+            UsuarioSeeder::class,
+            ClienteSeeder::class,
+            ProjetoSeeder::class,
+            TipoTarefaSeeder::class,
             StatusTarefaSeeder::class,
-            TipoTarefaSeeder::class
+            TarefaSeeder::class
         ]);
     }
 }

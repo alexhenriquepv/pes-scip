@@ -15,18 +15,13 @@ GET /usuarios
 ```json
 [
   {
-    "id": 1,
-    "nome": "Usuário atualizado",
-    "perfil_id": "1",
-    "created_at": "2021-09-26T16:43:28.000000Z",
-    "updated_at": "2021-09-26T17:15:55.000000Z"
-  },
-  {
-    "id": 3,
-    "nome": "Usuário teste 2",
+    "id": 2,
+    "nome": "Usuário teste 3",
     "perfil_id": "2",
-    "created_at": "2021-09-26T17:17:18.000000Z",
-    "updated_at": "2021-09-26T17:17:18.000000Z"
+    "cpf": "929.999.999-22",
+    "carga_horaria": "30",
+    "email": "teste@email.com",
+    "senha": "babyshark"
   }
 ]
 ```
@@ -45,11 +40,17 @@ GET /usuarios/:id
 **Response**
 ```json
 {
-  "id": 1,
-  "nome": "Usuário teste",
-  "perfil_id": "1",
-  "created_at": "2021-09-26T16:43:28.000000Z",
-  "updated_at": "2021-09-26T16:43:28.000000Z"
+  "id": 2,
+  "nome": "Usuário teste 3",
+  "perfil_id": "2",
+  "cpf": "929.999.999-22",
+  "carga_horaria": "30",
+  "email": "teste@email.com",
+  "senha": "babyshark",
+  "perfil": {
+    "id": 2,
+    "nome": "Dev Pleno"
+  }
 }
 ```
 
@@ -62,7 +63,11 @@ POST /usuarios
 **Request**
 ```json
 {
-	"nome": "Usuário teste 2",
+	"nome": "Usuário teste 3",
+	"email": "teste@email.com",
+	"senha": "babyShark",
+	"carga_horaria": 30,
+	"cpf": "929.999.999-22",
 	"perfil_id": 2
 }
 ```

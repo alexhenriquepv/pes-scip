@@ -16,7 +16,7 @@ class UsuarioController extends Controller
 
     function show($id)
     {
-        $usuario = Usuario::findOrFail($id);
+        $usuario = Usuario::with('perfil')->findOrFail($id);
         return response()->json($usuario);
     }
 

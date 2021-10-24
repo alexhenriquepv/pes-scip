@@ -15,13 +15,15 @@ GET /tarefas
 ```json
 [
   {
-    "id": 1,
-    "titulo": "Modelo Entidade Relacionamento",
+    "id": 2,
+    "titulo": "Modelo relacional",
     "descricao": "Gerar o modelo ER em PDF",
     "data_inicio": "2021-10-25",
     "data_fim": "2021-10-28",
     "tipo_tarefa_id": "1",
-    "status_tarefa_id": "1"
+    "status_tarefa_id": "1",
+    "projeto_id": "1",
+    "progresso": 0
   }
 ]
 ```
@@ -40,13 +42,21 @@ GET /tarefas/:id
 **Response**
 ```json
 {
-  "id": 1,
-  "titulo": "Modelo Entidade Relacionamento",
+  "id": 2,
+  "titulo": "Modelo relacional",
   "descricao": "Gerar o modelo ER em PDF",
   "data_inicio": "2021-10-25",
   "data_fim": "2021-10-28",
   "tipo_tarefa_id": "1",
-  "status_tarefa_id": "1"
+  "status_tarefa_id": "1",
+  "projeto_id": "1",
+  "progresso": 0,
+  "membros": [],
+  "lancamentos": [],
+  "projeto": {
+    "id": 1,
+    "nome": "Projeto A"
+  }
 }
 ```
 
@@ -59,12 +69,14 @@ POST /tarefas
 **Request**
 ```json
 {
-	"titulo": "Modelo relacional",
-	"descricao": "Gerar o modelo ER em PDF",
-	"data_inicio": "2021-10-25",
-	"data_fim": "2021-10-28",
-	"tipo_tarefa_id": 1,
-	"status_tarefa_id": 1
+  "titulo": "Modelo relacional",
+  "descricao": "Gerar o modelo ER em PDF",
+  "data_inicio": "2021-10-25",
+  "data_fim": "2021-10-28",
+  "tipo_tarefa_id": 1,
+  "status_tarefa_id": 1,
+  "projeto_id": 1,
+  "membros": [1, 2]
 }
 ```
 
@@ -84,8 +96,7 @@ PUT /tarefas/:id
 **Request**
 ```json
 {
-	"id": 1,
-	"titulo": "Modelo Entidade Relacionamento"
+  "titulo": "Modelo Entidade Relacionamento"
 }
 ```
 

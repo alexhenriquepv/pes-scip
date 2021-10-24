@@ -19,7 +19,10 @@ class CreateUsuariosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->foreignIdFor(Perfil::class);
-            $table->timestamps();
+            $table->string('cpf')->nullable();
+            $table->integer('carga_horaria')->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('senha');
         });
     }
 

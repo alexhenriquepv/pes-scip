@@ -15,7 +15,7 @@ class Projeto extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nome','cliente_id','prioridade',
+        'nome','descricao','cliente_id','prioridade',
         'data_inicio','data_fim','ativo'
     ];
 
@@ -27,5 +27,10 @@ class Projeto extends Model
     public function tarefas()
     {
         return $this->hasMany(Tarefa::class);
+    }
+
+    public function membros()
+    {
+        return $this->belongsToMany(Usuario::class);
     }
 }

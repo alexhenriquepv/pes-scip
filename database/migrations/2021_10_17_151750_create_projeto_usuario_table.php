@@ -4,7 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClientesTable extends Migration
+use App\Models\Projeto;
+use App\Models\Usuario;
+
+class CreateProjetoUsuarioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +16,10 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('projeto_usuario', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('cnpj')->nullable();
-            $table->string('servico')->nullable();
-            $table->string('celular')->nullable();
-            $table->string('endereco')->nullable();
+            $table->foreignIdFor(Projeto::class);
+            $table->foreignIdFor(Usuario::class);
         });
     }
 
@@ -30,6 +30,6 @@ class CreateClientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('projeto_usuario');
     }
 }
