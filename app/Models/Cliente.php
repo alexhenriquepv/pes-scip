@@ -11,7 +11,7 @@ class Cliente extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['nome','cnpj','sevico','celular','endereco'];
+    protected $fillable = ['nome','cnpj','servico','celular','endereco'];
 
     public function projetos()
     {

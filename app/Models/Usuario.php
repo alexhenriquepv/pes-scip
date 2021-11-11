@@ -14,7 +14,7 @@ class Usuario extends Model
 
     protected $hidden = ['pivot'];
     
-    protected $fillable = ['nome','cpf','carga_horaria','email','senha'];
+    protected $fillable = ['nome','cpf','carga_horaria','email','senha','ativo'];
 
     public function perfil()
     {

@@ -17,15 +17,8 @@ class Tarefa extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        'titulo','descricao','data_inicio','data_fim'
+        'titulo','descricao','data_inicio','data_fim','progresso'
     ];
-
-    protected $appends = ['progresso'];
-
-    public function tipo()
-    {
-        return $this->belongsTo(TipoTarefa::class, 'tipo_tarefa_id');
-    }
 
     public function status()
     {
@@ -45,16 +38,5 @@ class Tarefa extends Model
     public function lancamentos()
     {
         return $this->hasMany(Lancamento::class);
-    }
-
-    public function getProgressoAttribute()
-    {
-        $progresso = 0;
-        $lancamentos = $this->lancamentos()->get();
-        foreach ($lancamentos as $lan) {
-            $progresso += $lan['qtd_horas'];
-        }
-        
-        return $progresso;
     }
 }

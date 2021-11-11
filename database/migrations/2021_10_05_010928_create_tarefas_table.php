@@ -4,7 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use App\Models\TipoTarefa;
 use App\Models\StatusTarefa;
 use App\Models\Projeto;
 
@@ -23,7 +22,7 @@ class CreateTarefasTable extends Migration
             $table->string('descricao')->nullable();
             $table->date('data_inicio');
             $table->date('data_fim');
-            $table->foreignIdFor(TipoTarefa::class)->nullable();
+            $table->integer('progresso')->default(0);
             $table->foreignIdFor(StatusTarefa::class)->nullable();
             $table->foreignIdFor(Projeto::class)->nullable();
         });

@@ -10,7 +10,7 @@ class ProjetoController extends Controller
 {
     function index()
     {
-        $projetos = Projeto::all();
+        $projetos = Projeto::with('membros:id,nome')->get();
         return response()->json($projetos);
     }
 

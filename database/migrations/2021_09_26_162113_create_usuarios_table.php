@@ -23,6 +23,7 @@ class CreateUsuariosTable extends Migration
             $table->integer('carga_horaria')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('senha');
+            $table->boolean('ativo')->default(true);
         });
     }
 

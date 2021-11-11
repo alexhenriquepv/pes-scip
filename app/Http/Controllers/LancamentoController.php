@@ -8,9 +8,17 @@ use App\Models\Tarefa;
 
 class LancamentoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $lancamentos = Lancamento::all();
+        $lancamentos = array();
+
+        if (isset($request->tarefa_id)) {
+            $lancamentos = Lancamento::where('tarefa_id', $request->tarefa_id)->get();
+        }
+        else {
+            $lancamentos = Lancamento::all();
+        }
+
         return response()->json($lancamentos);
     }
 

@@ -20,7 +20,6 @@ class TarefaSeeder extends Seeder
 				"descricao" =>  "Tarefa gerada automaticamente",
 				"data_inicio" =>  "2021-10-25",
 				"data_fim" =>  "2021-10-28",
-				"tipo_tarefa_id" =>  1,
 				"status_tarefa_id" =>  1,
                 "projeto_id" => 1
             ]

@@ -10,8 +10,8 @@ use \Database\Seeders\UsuarioSeeder;
 use \Database\Seeders\ClienteSeeder;
 use \Database\Seeders\ProjetoSeeder;
 use \Database\Seeders\StatusTarefaSeeder;
-use \Database\Seeders\TipoTarefaSeeder;
 use \Database\Seeders\TarefaSeeder;
+use \Database\Seeders\LancamentoSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,9 +27,9 @@ class DatabaseSeeder extends Seeder
             UsuarioSeeder::class,
             ClienteSeeder::class,
             ProjetoSeeder::class,
-            TipoTarefaSeeder::class,
             StatusTarefaSeeder::class,
-            TarefaSeeder::class
+            TarefaSeeder::class,
+            LancamentoSeeder::class
         ]);
     }
 }

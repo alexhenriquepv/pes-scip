@@ -6,6 +6,12 @@
 GET /lancamentos
 ```
 
+Ou filtrando pelo id da tarefa
+
+```HTTP
+GET /lancamentos?tarefa_id=1
+```
+
 **Request**
 ```json
 {}

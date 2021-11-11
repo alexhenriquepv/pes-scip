@@ -11,6 +11,7 @@ class StatusTarefa extends Model
     use HasFactory;
 
     public $timestamps = false;
+    protected $table = 'status_tarefa';
     protected $fillable = ['descricao'];
 
     public function tarefas()
