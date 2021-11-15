@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Tarefa;
 use App\Models\TipoTarefa;
 use App\Models\StatusTarefa;
 use App\Models\Usuario;
@@ -17,7 +18,7 @@ class Tarefa extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        'titulo','descricao','data_inicio','data_fim','progresso'
+        'titulo','descricao','data_inicio','data_fim','progresso','tarefa_antecessora_id'
     ];
 
     public function status()
@@ -38,5 +39,10 @@ class Tarefa extends Model
     public function lancamentos()
     {
         return $this->hasMany(Lancamento::class);
+    }
+
+    public function antecessora()
+    {
+        return $this->hasOne(Tarefa::class, 'id', 'tarefa_antecessora_id');
     }
 }

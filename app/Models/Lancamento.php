@@ -12,7 +12,7 @@ class Lancamento extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['qtd_horas','usuario_id','data'];
+    protected $fillable = ['qtd_horas','usuario_id','data','descricao'];
 
     public function tarefa()
     {

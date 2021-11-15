@@ -23,6 +23,7 @@ GET /tarefas
     "tipo_tarefa_id": "1",
     "status_tarefa_id": "1",
     "projeto_id": "1",
+    "tarefa_antecessora_id": 1,
     "progresso": 0
   }
 ]
@@ -76,6 +77,7 @@ POST /tarefas
   "tipo_tarefa_id": 1,
   "status_tarefa_id": 1,
   "projeto_id": 1,
+  "tarefa_antecessora_id": 1,
   "membros": [1, 2]
 }
 ```

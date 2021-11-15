@@ -43,7 +43,7 @@ class ProjetoController extends Controller
 
         if ($request->cliente_id) {
             $cliente = Cliente::findOrFail($request->cliente_id);
-            $projeto->perfil()->associate($cliente);
+            $projeto->cliente()->associate($cliente);
         }
 
         $projeto->update($request->except(['cliente_id', 'membros']));

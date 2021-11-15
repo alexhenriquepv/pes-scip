@@ -49,6 +49,7 @@ GET /lancamentos/:id
   "usuario_id": "1",
   "qtd_horas": "3",
   "data": "2021-11-08",
+  "descricao": "Descrição do lançamento",
   "tarefa": {
     "id": 1,
     "titulo": "Modelo relacional",
@@ -72,8 +73,9 @@ POST /lancamentos
 {
 	"tarefa_id": 1,
 	"usuario_id": 1,
-	"qtd_horas": 3,
-	"data": "2021-11-08"
+	"qtd_horas": 2,
+	"data": "2021-11-18",
+	"descricao": "Descrição do lançamento"
 }
 ```
 

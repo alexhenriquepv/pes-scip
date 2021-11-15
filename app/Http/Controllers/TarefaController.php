@@ -17,20 +17,22 @@ class TarefaController extends Controller
 
     public function show($id)
     {
-        $tarefa = Tarefa::with(['membros:id,nome','projeto:id,nome'])->findOrFail($id);
+        $tarefa = Tarefa::with([
+            'membros:id,nome','projeto:id,nome','antecessora:id,titulo'
+        ])->findOrFail($id);
         return response()->json($tarefa);
     }
 
     public function store(Request $request)
     {
-        $statusTarefa = TipoTarefa::findOrFail($request->status_tarefa_id);
+        $statusTarefa = StatusTarefa::findOrFail($request->status_tarefa_id);
         $projeto = Projeto::findOrFail($request->projeto_id);
-        $data = $request->except([
-            'status_tarefa_id','projeto_id','membros'
-        ]);
+
+        $data = $request->except(['status_tarefa_id','projeto_id','membros']);
         
         $tarefa = new Tarefa($data);
         $tarefa->status()->associate($statusTarefa);
+
         $projeto->tarefas()->save($tarefa);
 
         if ($request->membros) {
@@ -50,7 +52,8 @@ class TarefaController extends Controller
             $tarefa->status()->associate($statusTarefa);
         }
 
-        $data = $request->except(['status_tarefa_id','membros']);
+        $data = $request->except(['status_tarefa_id','projeto_id','membros']);
+
         $tarefa->update($data);
 
         if (isset($request->membros)) {

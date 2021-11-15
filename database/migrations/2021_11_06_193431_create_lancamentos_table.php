@@ -22,6 +22,7 @@ class CreateLancamentosTable extends Migration
             $table->foreignIdFor(Usuario::class);
             $table->integer('qtd_horas');
             $table->date('data');
+            $table->string('descricao')->nullable();
         });
     }
 

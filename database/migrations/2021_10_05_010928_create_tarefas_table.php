@@ -23,6 +23,7 @@ class CreateTarefasTable extends Migration
             $table->date('data_inicio');
             $table->date('data_fim');
             $table->integer('progresso')->default(0);
+            $table->foreignId('tarefa_antecessora_id')->nullable();
             $table->foreignIdFor(StatusTarefa::class)->nullable();
             $table->foreignIdFor(Projeto::class)->nullable();
         });
